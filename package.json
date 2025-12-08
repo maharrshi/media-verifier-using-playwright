@@ -1,10 +1,12 @@
 {
   "name": "media-verifier-using-playwright",
   "version": "1.0.0",
+  "type": "module",
   "main": "index.js",
   "scripts": {
-    "test": "npx playwright test",
-    "verify": "node src/groupByExtension.js && npx playwright test"
+    "test": "rm -f results.ndjson.lock && npx playwright test",
+    "verify": "node src/groupByExtension.js && rm -f results.ndjson.lock && npx playwright test",
+    "report": "node generate-html-report.js"
   },
   "keywords": [],
   "author": "",

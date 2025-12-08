@@ -1,1 +1,14 @@
 node_modules/
+
+# Test artifacts
+results.ndjson
+results.ndjson.lock
+summary.html
+
+# Playwright reports
+playwright-report/
+test-results/
+
+# macOS system files
+.DS_Store
+**/.DS_Store

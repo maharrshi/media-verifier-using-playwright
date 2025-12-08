@@ -36,11 +36,11 @@ for (const file of fs.readdirSync(INPUT_DIR)) {
 
     let chosen = [];
 
-    if (count >= 10) {
-      // pick random 10
-      chosen = all.sort(() => 0.5 - Math.random()).slice(0, 10);
+    if (count >= 50) {
+      // pick random 50
+      chosen = all.sort(() => 0.5 - Math.random()).slice(0, 50);
     } else {
-      chosen = all; // open all <10
+      chosen = all; // open all <50
     }
 
     chosen.forEach(fp => {
