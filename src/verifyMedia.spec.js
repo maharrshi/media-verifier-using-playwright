@@ -5,12 +5,8 @@ import { buildFinalUrl } from './utils.js';
 
 const samples = JSON.parse(fs.readFileSync(path.join('data', 'samples.json')));
 
-// Reset NDJSON output ONCE per test run using a lock file
-const lockFile = 'results.ndjson.lock';
-if (!fs.existsSync(lockFile)) {
-  fs.writeFileSync('results.ndjson', '');
-  fs.writeFileSync(lockFile, Date.now().toString());
-}
+// Results file is initialized by global-setup.js before workers start
+// fs.appendFile is safe for concurrent writes from multiple workers
 
 test.describe('Smart Media Verification', () => {
 
